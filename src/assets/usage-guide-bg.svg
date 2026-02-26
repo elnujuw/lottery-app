@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="55%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#111827" stop-opacity="0.75" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)" />
+  <circle cx="300" cy="180" r="220" fill="#22d3ee" opacity="0.12" />
+  <circle cx="1650" cy="220" r="260" fill="#38bdf8" opacity="0.1" />
+  <circle cx="1740" cy="900" r="320" fill="#14b8a6" opacity="0.1" />
+
+  <rect x="180" y="120" width="1560" height="840" rx="36" fill="url(#card)" stroke="#94a3b8" stroke-opacity="0.25" filter="url(#shadow)" />
+
+  <text x="240" y="230" fill="#e2e8f0" font-size="68" font-weight="700" font-family="'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif">
+    抽奖系统使用说明
+  </text>
+  <text x="240" y="285" fill="#94a3b8" font-size="30" font-family="'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif">
+    打开右下角“抽奖配置”，按以下步骤完成活动准备
+  </text>
+
+  <g fill="#f8fafc" font-size="38" font-family="'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif">
+    <text x="250" y="390">1. 奖池配置：创建奖池并导入名单（每行一人）。</text>
+    <text x="250" y="490">2. 奖项配置：设置奖项名称、数量、所属奖池。</text>
+    <text x="250" y="590">3. 可选配置：填写奖品描述与图片，保存后自动用于展示页。</text>
+    <text x="250" y="690">4. 开始抽奖：点击“开始抽奖”，选择奖项和抽取数量后启动。</text>
+    <text x="250" y="790">5. 结果管理：在“抽奖结果”中查看、删除或清空中奖记录。</text>
+  </g>
+
+  <text x="240" y="900" fill="#cbd5e1" font-size="26" font-family="'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif">
+    提示：背景图、奖品信息均可在“抽奖配置”中动态调整并持久化保存。
+  </text>
+</svg>
