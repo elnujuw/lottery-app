@@ -1,7 +1,7 @@
 <template>
   <div id="root" :style="rootStyle">
     <div class="music">
-      <audio ref="audio" src="@/assets/bgc.mp3" loop></audio>
+      <audio ref="audio" :src="bgMusic" loop></audio>
       <span v-if="!showMusic">
         <el-icon @click="toggleMusic"><VideoPlay /></el-icon>
       </span>
@@ -42,6 +42,7 @@ import LuckList from '@/components/LuckList.vue';
 import AnimationComp from './components/animation.vue';
 import defaultBackground from '@/assets/usage-guide-bg.svg';
 import { getUIConfig } from '@/helper/appConfig';
+import bgMusicUrl from '@/assets/bgm.mp3';
 
 const audio = ref(null);
 const tool = ref(null);
@@ -53,6 +54,7 @@ const showLuckList = ref(false);
 const showDialog = ref(false);
 const showMusic = ref(false);
 const backgroundImage = ref(defaultBackground);
+const bgMusic = bgMusicUrl;
 
 const rootStyle = computed(() => ({
   backgroundImage: `url('${backgroundImage.value || defaultBackground}')`
@@ -66,8 +68,14 @@ const refreshUIConfig = async () => {
 const toggleMusic = () => {
   if (!audio.value) return;
   if (audio.value.paused) {
-    showMusic.value = true;
-    audio.value.play();
+    audio.value
+      .play()
+      .then(() => {
+        showMusic.value = true;
+      })
+      .catch(() => {
+        showMusic.value = false;
+      });
   } else {
     showMusic.value = false;
     audio.value.pause();
